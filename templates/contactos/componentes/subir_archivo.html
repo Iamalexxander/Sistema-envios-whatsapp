@@ -1,0 +1,65 @@
+<!-- Componente: Subir Archivo de Excel -->
+<div class="upload-section">
+    <div class="upload-container" id="uploadContainer">
+        <div class="upload-icon">
+            <button id="btnUploadFile" class="upload-circle-btn" type="button">
+                <i class="fas fa-file-arrow-up"></i>
+            </button>
+        </div>
+        <h3>Subir Archivo de Excel</h3>
+        <p>Arrastra y suelta tu archivo Excel aquí, o haz clic para navegar</p>
+        
+        <!-- Explicación de la plantilla -->
+        <div class="template-info-box">
+            <i class="fas fa-info-circle"></i>
+            <span>¿Primera vez? Descarga la plantilla, completa los datos de tus contactos (Nombre y Teléfono), guárdala y súbela aquí.</span>
+        </div>
+        
+        <div class="upload-actions">
+            <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" style="display:none;">
+            <button class="btn-primary" id="btnUpload" type="button">
+                <i class="fas fa-upload"></i> Elegir Archivo
+            </button>
+            <button class="btn-secondary" id="btnDownloadTemplate" type="button">
+                <i class="fas fa-download"></i> Descargar Plantilla
+            </button>
+        </div>
+        <p class="upload-note">Formatos soportados: .xlsx, .xls, .csv • Columnas requeridas: Nombre, Teléfono (+593)</p>
+    </div>
+    
+    <!-- Estado del archivo seleccionado -->
+    <div id="fileStatus" class="file-status" style="display: none;">
+        <div class="file-info">
+            <div class="file-icon">
+                <i class="fas fa-file-excel"></i>
+            </div>
+            <div class="file-details">
+                <h4 id="fileName">archivo.xlsx</h4>
+                <p id="fileSize">2.5 MB</p>
+                <p id="fileRows">Estimado: 1,247 contactos</p>
+            </div>
+        </div>
+        <div class="file-actions">
+            <button class="btn-primary" id="btnProcessFile" type="button">
+                <i class="fas fa-cogs"></i> Procesar Archivo
+            </button>
+            <button class="btn-outline" id="btnRemoveFile" type="button">
+                <i class="fas fa-times"></i> Quitar
+            </button>
+        </div>
+    </div>
+    
+    <!-- Progreso de procesamiento -->
+    <div id="uploadProgress" class="upload-progress" style="display: none;">
+        <div class="progress-header">
+            <span>Procesando archivo...</span>
+            <span id="progressPercent">0%</span>
+        </div>
+        <div class="progress-bar">
+            <div id="progressFill" class="progress-fill"></div>
+        </div>
+        <div id="progressDetails" class="progress-details">
+            Validando formato y datos...
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Campañas - WhatsApp Sender{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/campanas.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/formulario_mensaje.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/configuracion_envio.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/progreso_campana.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/seleccion_destinatarios.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/previsualizacion_whatsapp.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/campanas/componentes/modal_seleccion_contactos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/whatsapp_status.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="app-layout">
+    <div class="main-content">
+        <!-- Header con badge -->
+        <div class="page-header">
+            <div class="header-left">
+                <h1>Campañas</h1>
+                <p>Gestiona y envía campañas de WhatsApp a tus contactos</p>
+            </div>
+            <div class="header-right">
+                <!-- Badge de WhatsApp -->
+                <div class="status-badge {% if estado_whatsapp.conectado %}connected{% else %}disconnected{% endif %}" 
+                     id="statusBadgeGlobal">
+                    <div class="status-dot"></div>
+                    <span class="status-text">
+                        {% if estado_whatsapp.conectado %}
+                            <i class="fas fa-check-circle"></i> Conectado
+                        {% else %}
+                            <i class="fas fa-times-circle"></i> Desconectado
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Layout -->
+        <div class="content-layout">
+            <!-- Left Section -->
+            <div class="left-section">
+                {% include 'campanas/componentes/formulario_mensaje.html' %}
+                {% include 'campanas/componentes/seleccion_destinatarios.html' %}
+            </div>
+
+            <!-- Right Section -->
+            <div class="right-section">
+                {% include 'campanas/componentes/previsualizacion_whatsapp.html' %}
+                {% include 'campanas/componentes/configuracion_envio.html' %}
+                {% include 'campanas/componentes/progreso_campana.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Selección de Contactos -->
+{% include 'campanas/componentes/modal_seleccion_contactos.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/componentes/whatsapp_status_indicator.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/campanas.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/formulario_mensaje.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/configuracion_envio.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/progreso_campana.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/seleccion_destinatarios.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/previsualizacion_whatsapp.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/campanas/componentes/modal_seleccion_contactos.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const campanasLink = document.querySelector('a[href*="campanas"]');
+        if (campanasLink) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('activo');
+            });
+            campanasLink.classList.add('activo');
+        }
+    }, 200);
+});
+</script>
+{% endblock %}

@@ -1,0 +1,144 @@
+<div class="card template-details-card">
+    <!-- View Mode -->
+    <div class="template-view-mode" id="templateViewMode">
+        <div class="card-header">
+            <div class="template-title-section">
+                <h2 class="template-title" id="templateTitle">Nueva Plantilla</h2>
+                <div class="template-meta">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span id="templateCreatedDate">Creado hoy</span>
+                    <div class="meta-separator"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="meta-icon">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <span id="templateUsageCount">0 usos</span>
+                </div>
+            </div>
+            <div class="template-actions">
+                <button class="btn btn-outline" id="editTemplateBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                    </svg>
+                    Editar
+                </button>
+                <button class="btn btn-outline" id="copyTemplateBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copiar
+                </button>
+                <button class="btn btn-outline btn-danger" id="deleteTemplateBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="3 6 5 6 21 6"></polyline>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="template-content-section">
+                <div class="content-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="content-icon">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <span>Contenido de la Plantilla</span>
+                </div>
+                <div class="template-content-display" id="templateContentDisplay">
+                    Selecciona una plantilla para ver su contenido
+                </div>
+                <div class="content-stats">
+                    <span id="templateCharCount">0 caracteres</span>
+                    <span id="templateVarCount">0 variables</span>
+                </div>
+            </div>
+
+            <div class="template-info-section">
+                <h4 class="info-title">Información de la Plantilla</h4>
+                <div class="info-grid">
+                    <div class="info-row">
+                        <span>Categoría:</span>
+                        <span class="template-category-badge" id="templateCategoryBadge">Sin categoría</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Fecha de creación:</span>
+                        <span id="templateCreationDate">-</span>
+                    </div>
+                    <div class="info-row">
+                        <span>Veces utilizada:</span>
+                        <span id="templateUsageNumber">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Mode -->
+    <div class="template-edit-mode hidden" id="templateEditMode">
+        <div class="card-header">
+            <div class="template-title-section">
+                <h2 class="template-title">Editor de Plantillas</h2>
+            </div>
+            <div class="template-actions">
+                <button class="btn btn-primary" id="saveTemplateBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                        <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                        <polyline points="7 3 7 8 15 8"></polyline>
+                    </svg>
+                    Guardar
+                </button>
+                <button class="btn btn-outline" id="viewTemplateBtn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                    Ver
+                </button>
+                <button class="btn btn-outline btn-cancel" id="cancelEditBtn" title="Cancelar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="card-content">
+            <div class="form-group">
+                <label for="templateNameInput" class="form-label">Nombre de Plantilla</label>
+                <input type="text" id="templateNameInput" class="form-input" placeholder="Ingresa un nombre">
+            </div>
+
+            <div class="form-group">
+                <label for="templateCategorySelect" class="form-label">Categoría</label>
+                <div class="category-select-container">
+                    <select id="templateCategorySelect" class="form-input">
+                        <option value="">Selecciona una categoría</option>
+                    </select>
+                    <button type="button" class="btn-manage-categories" id="btnManageCategorias">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="12" y1="5" x2="12" y2="19"></line>
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="templateContentInput" class="form-label">Contenido del Mensaje</label>
+                <textarea id="templateContentInput" class="form-textarea" rows="10" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <p class="input-help" id="charCounter">0 caracteres</p>
+            </div>
+        </div>
+    </div>
+</div>

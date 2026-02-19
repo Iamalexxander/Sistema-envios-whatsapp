@@ -1,0 +1,89 @@
+<!-- Plantilla de Mensaje -->
+<div class="card formulario-mensaje-card">
+    <div class="card-header">
+        <div class="card-header-content">
+            <i class="fas fa-file-text"></i>
+            <span>Plantilla de Mensaje</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="form-group">
+            <label>Seleccionar Plantilla</label>
+            <select id="plantilla-select">
+                <option value="">Elige una plantilla creada previamente</option>
+                {% for plantilla in plantillas %}
+                <option value="{{ plantilla.id }}">{{ plantilla.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>
+                Contenido del Mensaje
+                <span class="label-badge">Máx. 30 palabras</span>
+            </label>
+            <textarea id="mensaje-textarea" placeholder="Selecciona una plantilla arriba..." readonly></textarea>
+        </div>
+
+        <div class="mensaje-stats">
+            <span id="mensaje-info">0 palabras • 0 caracteres</span>
+        </div>
+
+        <div class="form-group">
+            <label>Archivos Adjuntos (Opcional)</label>
+            
+            <!-- Opciones de tipo de archivo -->
+            <div class="archivo-options">
+                <label class="archivo-option" id="option-imagen">
+                    <input type="radio" name="archivo" value="imagen">
+                    <div class="option-box">
+                        <i class="fas fa-image"></i>
+                        <span>Imagen</span>
+                    </div>
+                </label>
+                <label class="archivo-option" id="option-video">
+                    <input type="radio" name="archivo" value="video">
+                    <div class="option-box">
+                        <i class="fas fa-video"></i>
+                        <span>Video</span>
+                    </div>
+                </label>
+                <label class="archivo-option" id="option-documento">
+                    <input type="radio" name="archivo" value="documento">
+                    <div class="option-box">
+                        <i class="fas fa-file"></i>
+                        <span>Documento</span>
+                    </div>
+                </label>
+            </div>
+
+            <!-- Input file oculto -->
+            <input type="file" id="file-input" style="display: none;">
+
+            <!-- Preview del archivo seleccionado -->
+            <div id="archivo-preview" class="archivo-preview" style="display: none;">
+                <div class="preview-header">
+                    <span>Archivo seleccionado:</span>
+                    <button type="button" id="eliminar-archivo" class="btn-eliminar-archivo">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="preview-content">
+                    <div class="preview-icon">
+                        <i id="preview-icon" class="fas fa-file"></i>
+                    </div>
+                    <div class="preview-info">
+                        <div id="preview-nombre" class="preview-nombre">archivo.jpg</div>
+                        <div id="preview-size" class="preview-size">2.5 MB</div>
+                        <div id="preview-tipo" class="preview-tipo">Imagen</div>
+                    </div>
+                </div>
+                <div class="preview-actions">
+                    <button type="button" id="cambiar-archivo" class="btn-cambiar">
+                        <i class="fas fa-sync-alt"></i> Cambiar archivo
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

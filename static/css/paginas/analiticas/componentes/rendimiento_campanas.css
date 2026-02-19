@@ -1,0 +1,107 @@
+/* Rendimiento de Campañas */
+
+.rendimiento-card .card-header-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-export-excel,
+.btn-export-pdf {
+    border: 1px solid #d1d5db;
+    background: white;
+    color: #374151;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-export-excel:hover {
+    background: #22c55e;
+    color: white;
+    border-color: #22c55e;
+}
+
+.btn-export-pdf:hover {
+    background: #ef4444;
+    color: white;
+    border-color: #ef4444;
+}
+
+.tabla-container {
+    overflow-x: auto;
+}
+
+.tabla-rendimiento {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabla-rendimiento th {
+    background: #f8fafc;
+    color: #374151;
+    font-weight: 600;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tabla-rendimiento td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #374151;
+}
+
+.tabla-rendimiento tr:hover {
+    background: #f8fafc;
+}
+
+.tasa-exito {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tasa-exito.high {
+    background: #dcfce7;
+    color: #22c55e;
+}
+
+.tasa-exito.medium {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.tasa-exito.low {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.estado {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.estado.completado {
+    background: #dcfce7;
+    color: #22c55e;
+}
+
+.estado.enviando {
+    background: #dbeafe;
+    color: #3b82f6;
+}
+
+.estado.pausado {
+    background: #fef3c7;
+    color: #f59e0b;
+}

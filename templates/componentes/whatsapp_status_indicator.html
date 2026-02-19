@@ -1,0 +1,31 @@
+{% if mostrar_indicador %}
+<div class="whatsapp-status-global" id="whatsappStatusGlobal">
+    <div class="status-badge {% if estado_whatsapp.conectado %}connected{% else %}disconnected{% endif %}" 
+         id="statusBadgeGlobal">
+        <div class="status-dot"></div>
+        <span class="status-text">
+            {% if estado_whatsapp.conectado %}
+                <i class="fas fa-check-circle"></i> Conectado
+            {% else %}
+                <i class="fas fa-times-circle"></i> Desconectado
+            {% endif %}
+        </span>
+    </div>
+</div>
+
+<!-- Overlay de bloqueo (solo cuando desconectado) -->
+{% if not estado_whatsapp.conectado %}
+<div class="whatsapp-block-overlay" id="whatsappBlockOverlay">
+    <div class="block-message">
+        <div class="icon-wrapper">
+            <i class="fas fa-plug"></i>
+        </div>
+        <h3>WhatsApp Desconectado</h3>
+        <p>Conéctate a WhatsApp para usar esta funcionalidad</p>
+        <a href="/configuracion" class="btn-conectar">
+            <i class="fas fa-link"></i> Ir a Configuración
+        </a>
+    </div>
+</div>
+{% endif %}
+{% endif %}

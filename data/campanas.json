@@ -1,0 +1,16 @@
+[
+  {
+    "id": "49b155d5-f16b-40bd-ae2b-ca87162a3cc7",
+    "nombre": "Campaña 7/10/2025 14:23",
+    "contenido": "Plantilla",
+    "plantilla_id": null,
+    "intervalo": 5,
+    "origen_destinatarios": "activos",
+    "total_contactos": 1,
+    "enviados": 1,
+    "fallidos": 0,
+    "estado": "completado",
+    "creado_en": "2025-10-07T14:23:19.003884",
+    "actualizado_en": "2025-10-07T14:23:19.003884"
+  }
+]

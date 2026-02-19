@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}WhatsApp Sender{% endblock %}</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/modal_confirmacion_global.css') }}">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Incluir sidebar -->
+    {% include 'componentes/sidebar.html' %}
+    
+    <!-- Contenido principal -->
+    {% block content %}{% endblock %}
+    
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/componentes/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/componentes/modal_confirmacion_global.js') }}"></script>
+
+    <!-- Script de inicialización del sidebar -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            if (window.SidebarManager) {
+                // Determinar qué elemento marcar como activo
+                {% if pantalla_actual %}
+                window.SidebarManager.marcarActivo('{{ pantalla_actual }}');
+                {% else %}
+                window.SidebarManager.campanasDefault();
+                {% endif %}
+            }
+        }, 100);
+    });
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

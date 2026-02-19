@@ -1,0 +1,266 @@
+/* Editor de Plantillas CSS - OPTIMIZADO */
+
+/* Template View Mode */
+.template-title-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.template-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.5rem 0;
+}
+
+.template-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+    flex-wrap: wrap;
+}
+
+.meta-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.meta-separator {
+    width: 1px;
+    height: 16px;
+    background: #e5e7eb;
+}
+
+/* Template Actions */
+.template-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.template-actions .btn {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.template-actions .btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Botón de eliminar y cancelar compactos (solo icono) */
+.template-actions .btn-danger,
+.template-actions .btn-cancel {
+    padding: 0.625rem;
+    min-width: auto;
+}
+
+.template-actions .btn-cancel:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.template-actions .btn-cancel:hover svg {
+    color: #ef4444;
+}
+
+/* Template Content Section */
+.template-content-section {
+    margin-bottom: 1.5rem;
+}
+
+.content-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #374151;
+    font-weight: 600;
+}
+
+.content-icon {
+    width: 18px;
+    height: 18px;
+    color: #25d366;
+}
+
+.template-content-display {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #374151;
+    white-space: pre-wrap;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+.content-stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Template Info Section */
+.template-info-section {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 1.25rem;
+}
+
+.info-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 0.75rem 0;
+}
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+}
+
+.info-row span:first-child {
+    color: #6b7280;
+}
+
+.info-row span:last-child {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.template-category-badge {
+    background: #dcfce7;
+    color: #166534;
+    padding: 0.25rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Template Edit Mode */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: #25d366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.input-help {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+/* Category Select Container */
+.category-select-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.category-select-container .form-input {
+    flex: 1;
+}
+
+.btn-manage-categories {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+}
+
+.btn-manage-categories:hover {
+    background: #e5e7eb;
+    border-color: #25d366;
+}
+
+.btn-manage-categories svg {
+    color: #6b7280;
+}
+
+.btn-manage-categories:hover svg {
+    color: #25d366;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .template-actions {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    
+    .category-select-container {
+        flex-direction: column;
+    }
+    
+    .btn-manage-categories {
+        align-self: flex-start;
+        min-width: auto;
+        padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .template-actions .btn:not(.btn-danger):not(.btn-primary):not(.btn-cancel) span {
+        display: none;
+    }
+    
+    .template-actions .btn {
+        padding: 0.625rem;
+    }
+}

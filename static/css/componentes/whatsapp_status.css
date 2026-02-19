@@ -1,0 +1,216 @@
+/* ===================================
+   INDICADOR DE ESTADO WHATSAPP
+   =================================== */
+
+/* Badge en el header */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    user-select: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.status-badge.connected {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.connected:hover {
+    background-color: #a7f3d0;
+}
+
+.status-badge.disconnected {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.status-badge.disconnected:hover {
+    background-color: #fecaca;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.status-badge.connected .status-dot {
+    background: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+.status-badge.disconnected .status-dot {
+    background: #ef4444;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2);
+}
+
+/* ===================================
+   ALERTA DE WHATSAPP (NO INTRUSIVA)
+   =================================== */
+
+.whatsapp-alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #ef4444;
+    z-index: 9999;
+    animation: slideInRight 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.whatsapp-alert.warning {
+    border-left-color: #f59e0b;
+}
+
+.whatsapp-alert.info {
+    border-left-color: #3b82f6;
+}
+
+.whatsapp-alert-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fee2e2;
+}
+
+.whatsapp-alert.warning .whatsapp-alert-icon {
+    background: #fef3c7;
+}
+
+.whatsapp-alert-icon i {
+    font-size: 18px;
+    color: #ef4444;
+}
+
+.whatsapp-alert.warning .whatsapp-alert-icon i {
+    color: #f59e0b;
+}
+
+.whatsapp-alert-content {
+    flex: 1;
+}
+
+.whatsapp-alert-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #111827;
+    margin: 0 0 4px 0;
+}
+
+.whatsapp-alert-message {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+}
+
+.whatsapp-alert-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.whatsapp-alert-btn {
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.whatsapp-alert-btn.primary {
+    background: linear-gradient(135deg, #25d366 0%, #20ba5a 100%);
+    color: white;
+}
+
+.whatsapp-alert-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-alert-btn.secondary {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.whatsapp-alert-btn.secondary:hover {
+    background: #e5e7eb;
+}
+
+.whatsapp-alert-close {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9ca3af;
+    font-size: 18px;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.whatsapp-alert-close:hover {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+/* Animación de salida */
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+.whatsapp-alert.hiding {
+    animation: slideOutRight 0.3s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .whatsapp-alert {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}

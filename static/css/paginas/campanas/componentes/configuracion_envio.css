@@ -1,0 +1,97 @@
+/* Estilos específicos para el componente de configuración de envío */
+
+/* Configuración exacta */
+.configuracion-envio-card .config-group {
+    margin-bottom: 20px;
+}
+
+.configuracion-envio-card .config-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+/* Nuevo Range Slider para intervalo */
+.configuracion-envio-card .range-container {
+    margin: 12px 0;
+}
+
+.configuracion-envio-card .range-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e2e8f0;
+    outline: none;
+    margin: 8px 0;
+    position: relative;
+}
+
+.configuracion-envio-card .range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 2px solid #22c55e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.configuracion-envio-card .range-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: 2px solid #22c55e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Parte verde del slider (progreso) */
+.configuracion-envio-card .range-slider {
+    background: linear-gradient(to right, 
+        #22c55e 0%, 
+        #22c55e var(--progress, 0%), 
+        #e2e8f0 var(--progress, 0%), 
+        #e2e8f0 100%);
+}
+
+.configuracion-envio-card .range-value {
+    text-align: right;
+    font-weight: 600;
+    color: #374151;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.configuracion-envio-card .help-text {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+.configuracion-envio-card .config-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.configuracion-envio-card .stat-box {
+    flex: 1;
+}
+
+.configuracion-envio-card .stat-label {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+.configuracion-envio-card .stat-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}

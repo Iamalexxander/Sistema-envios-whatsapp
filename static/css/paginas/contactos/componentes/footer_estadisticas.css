@@ -1,0 +1,109 @@
+/* CSS para componente Footer Estadísticas */
+.footer-stats {
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-primary);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 40px;
+    background: var(--border-light);
+}
+
+.stat-number {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* Estados específicos para números */
+#validContactsCount {
+    color: var(--success-color);
+}
+
+#invalidContactsCount {
+    color: var(--error-color);
+}
+
+#pendingValidationCount {
+    color: var(--warning-color);
+}
+
+/* Efectos hover */
+.stat-item:hover .stat-number {
+    transform: scale(1.05);
+    transition: transform 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .stat-item:not(:last-child)::after {
+        display: none;
+    }
+    
+    .stat-item {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .stat-item:last-child {
+        border-bottom: none;
+    }
+    
+    .stat-number {
+        font-size: 1.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-stats {
+        padding: 1rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .stat-label {
+        font-size: 0.8125rem;
+    }
+}

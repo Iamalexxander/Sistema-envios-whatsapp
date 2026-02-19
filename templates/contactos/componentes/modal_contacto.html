@@ -1,0 +1,35 @@
+<!-- Modal Agregar/Editar Contacto -->
+<div id="modalContacto" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modalTitle">Agregar Contacto</h3>
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="formContacto">
+                <input type="hidden" id="contactoId">
+                
+                <div class="form-group">
+                    <label for="contactoNombre">Nombre *</label>
+                    <input type="text" id="contactoNombre" required placeholder="Nombre completo del contacto">
+                    <span class="error-message"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="contactoNumero">Número de WhatsApp *</label>
+                    <input type="tel" id="contactoNumero" required placeholder="+5939XXXXXXXX">
+                    <span class="error-message"></span>
+                    <span class="help-text">Formato: +5939 seguido de 8 dígitos</span>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn-secondary" type="button" id="btnCancelar">Cancelar</button>
+            <button class="btn-primary" type="submit" id="btnGuardar" form="formContacto">
+                <i class="fas fa-save"></i> Guardar
+            </button>
+        </div>
+    </div>
+</div>

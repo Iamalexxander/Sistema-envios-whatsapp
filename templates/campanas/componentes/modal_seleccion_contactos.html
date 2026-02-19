@@ -1,0 +1,47 @@
+<!-- Modal para Seleccionar Personas Específicas -->
+<div id="modalSeleccionContactos" class="modal-seleccion" style="display: none;">
+    <div class="modal-seleccion-overlay"></div>
+    <div class="modal-seleccion-content">
+        <div class="modal-seleccion-header">
+            <h3>Seleccionar Personas Específicas</h3>
+            <button class="modal-close" id="closeModalSeleccion">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="modal-seleccion-search">
+            <input type="text" id="busquedaModalContactos" placeholder="Buscar por nombre o teléfono..." class="search-input">
+            <span class="selected-info">
+                <span id="seleccionadosModal">0</span> seleccionados
+            </span>
+        </div>
+        
+        <div class="modal-seleccion-body">
+            <div class="table-wrapper-modal">
+                <table class="contacts-table-modal">
+                    <thead>
+                        <tr>
+                            <th width="40">
+                                <input type="checkbox" id="selectAllModal">
+                            </th>
+                            <th>Nombre</th>
+                            <th>Teléfono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contactosModalBody">
+                        <!-- Contactos se llenarán dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="modal-seleccion-footer">
+            <button class="btn-secondary" id="btnCancelarSeleccion">
+                Cancelar
+            </button>
+            <button class="btn-primary" id="btnConfirmarSeleccion">
+                <i class="fas fa-check"></i> Confirmar Selección (<span id="totalSeleccionados">0</span>)
+            </button>
+        </div>
+    </div>
+</div>

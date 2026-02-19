@@ -1,0 +1,57 @@
+<div class="config-card whatsapp-card">
+    <div class="card-header">
+        <h3 class="card-title">
+            <i class="fas fa-wifi"></i>
+            Conexión WhatsApp
+        </h3>
+    </div>
+    <div class="card-content">
+        <!-- Estado de Conexión -->
+        <div class="connection-status">
+            <span class="status-label">Estado:</span>
+            <span id="whatsappStatus" class="status-badge disconnected">
+                <i class="fas fa-times-circle"></i>
+                Desconectado
+            </span>
+        </div>
+
+        <!-- Estado Conectado -->
+        <div id="whatsappConnected" class="connection-info" style="display: none;">
+            <div class="success-alert">
+                <p class="alert-title">✓ WhatsApp Web Conectado</p>
+                <p class="alert-subtitle">Sesión activa desde <span id="sessionDate">-</span></p>
+            </div>
+            <button id="disconnectBtn" class="btn btn-outline full-width">
+                <i class="fas fa-sign-out-alt"></i>
+                Desconectar Sesión
+            </button>
+        </div>
+
+        <!-- Estado Desconectado -->
+        <div id="whatsappDisconnected" class="connection-info">
+            <div class="disconnected-placeholder">
+                <i class="fas fa-unlink disconnected-icon"></i>
+                <p class="disconnected-text">No hay conexión activa con WhatsApp</p>
+                <p class="disconnected-subtitle">Conecta tu número para enviar mensajes</p>
+            </div>
+            <button id="connectWhatsAppBtn" class="btn btn-primary full-width">
+                <i class="fas fa-plug"></i>
+                Conectar WhatsApp
+            </button>
+        </div>
+
+        <div class="separator"></div>
+
+        <!-- Información de la Cuenta -->
+        <div class="account-info">
+            <div class="info-row">
+                <span class="info-label">Número de Teléfono:</span>
+                <span class="info-value" id="phoneNumber">-</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Navegador:</span>
+                <span class="info-value" id="browserName">-</span>
+            </div>
+        </div>
+    </div>
+</div>

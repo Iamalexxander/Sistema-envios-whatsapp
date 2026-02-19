@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "Marketing",
+    "color": "#25d366"
+  },
+  {
+    "id": 2,
+    "nombre": "Transaccional",
+    "color": "#3b82f6"
+  },
+  {
+    "id": 3,
+    "nombre": "Eventos",
+    "color": "#f59e0b"
+  },
+  {
+    "id": 4,
+    "nombre": "Soporte",
+    "color": "#ef4444"
+  }
+]

@@ -1,0 +1,190 @@
+/* Panel de Análisis - KPIs */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8fafc;
+    padding: 20px;
+}
+
+.panel-analisis {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    width: 100%;
+}
+
+.kpi-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 140px;
+    position: relative;
+}
+
+.kpi-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.kpi-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 8px;
+}
+
+.kpi-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kpi-sublabel {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.kpi-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 8px 0;
+    line-height: 1;
+}
+
+.kpi-value.success {
+    color: #22c55e;
+}
+
+.kpi-value.error {
+    color: #ef4444;
+}
+
+.kpi-change {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.3;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.kpi-change.positive {
+    color: #22c55e;
+}
+
+.kpi-change.negative {
+    color: #ef4444;
+}
+
+.kpi-change i {
+    font-size: 12px;
+}
+
+.kpi-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-left: auto;
+}
+
+.kpi-icon.blue {
+    background-color: #dbeafe;
+    color: #3b82f6;
+}
+
+.kpi-icon.green {
+    background-color: #dcfce7;
+    color: #22c55e;
+}
+
+.kpi-icon.red {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+.kpi-icon.yellow {
+    background-color: #fef3c7;
+    color: #f59e0b;
+}
+
+/* Responsive KPI Grid */
+@media (max-width: 1024px) {
+    .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .kpi-card {
+        padding: 16px;
+        min-height: 120px;
+    }
+    
+    .kpi-value {
+        font-size: 24px;
+    }
+    
+    .kpi-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 640px) {
+    .distribucion-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .distribucion-card .chart-container {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .distribucion-stats {
+        padding-left: 0;
+        gap: 16px;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+}

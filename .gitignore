@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.env
+.env.*
+.envrc
+
+# Bases de datos
+*.sqlite3
+*.db
+
+# Builds / ejecutables
+build/
+dist/
+*.exe
+*.spec
+*.zip
+
+# Logs y temporales
+*.log
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/

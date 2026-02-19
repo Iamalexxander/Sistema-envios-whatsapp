@@ -1,0 +1,44 @@
+{
+  "empresa": {
+    "nombre": "Mi Empresa"
+  },
+  "whatsapp": {
+    "conectado": false,
+    "numero": "+593987279918",
+    "navegador": "Microsoft Edge",
+    "sesion_activa": false,
+    "ultima_conexion": "2025-10-07T15:32:18.315454"
+  },
+  "auditoria": [
+    {
+      "timestamp": "2025-10-07T15:32:33.299035",
+      "usuario": "usuario principal",
+      "accion": "WhatsApp Desconectado",
+      "detalles": "Sesión desconectada para +593987279918",
+      "estado": "warning"
+    },
+    {
+      "timestamp": "2025-10-07T15:32:18.323463",
+      "usuario": "sistema",
+      "accion": "WhatsApp Conectado",
+      "detalles": "Conexión establecida para +593987279918 en Microsoft Edge",
+      "estado": "success"
+    },
+    {
+      "timestamp": "2025-10-07T15:29:19.456977",
+      "usuario": "usuario principal",
+      "accion": "WhatsApp Desconectado",
+      "detalles": "Sesión desconectada para +593987279918",
+      "estado": "warning"
+    },
+    {
+      "timestamp": "2025-10-07T14:22:23.930771",
+      "usuario": "sistema",
+      "accion": "WhatsApp Conectado",
+      "detalles": "Conexión establecida para +593987279918 en Microsoft Edge",
+      "estado": "success"
+    }
+  ],
+  "creado_en": "2025-10-07T14:18:58.544861",
+  "actualizado_en": "2025-10-07T15:32:33.299035"
+}

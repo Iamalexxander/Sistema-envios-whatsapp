@@ -1,0 +1,113 @@
+<!-- Componente: Tabla de Contactos -->
+<div class="table-container">
+    <div class="table-header">
+        <h3>Contactos ({{ contactos|length }})</h3>
+        <div class="table-actions">
+            <button class="btn-danger btn-sm" id="btnDeleteSelected" style="display: none;">
+                <i class="fas fa-trash-alt"></i> Eliminar Seleccionados (<span id="selectedCount">0</span>)
+            </button>
+            <button class="btn-outline btn-sm" id="btnRefreshTable">
+                <i class="fas fa-sync-alt"></i> Actualizar
+            </button>
+        </div>
+    </div>
+    
+    <div class="table-wrapper">
+        <table class="contacts-table" id="contactsTable">
+            <thead>
+                <tr>
+                    <th width="40">
+                        <input type="checkbox" id="selectAll">
+                    </th>
+                    <th>Nombre</th>
+                    <th>Teléfono</th>
+                    <th>Fecha Agregado</th>
+                    <th>Campañas</th>
+                    <th width="100">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="contactsTableBody">
+                {% if contactos and contactos|length > 0 %}
+                    {% for contacto in contactos %}
+                    <tr data-id="{{ contacto.id }}">
+                        <td>
+                            <input type="checkbox" class="contact-checkbox" data-id="{{ contacto.id }}">
+                        </td>
+                        <td class="contact-name">
+                            <div class="name-container">
+                                <div class="avatar">
+                                    {% if contacto.nombre %}
+                                        {% set palabras = contacto.nombre.split() %}
+                                        {% if palabras|length >= 2 %}
+                                            {{ palabras[0][0].upper() }}{{ palabras[-1][0].upper() }}
+                                        {% else %}
+                                            {{ contacto.nombre[0].upper() }}
+                                        {% endif %}
+                                    {% else %}
+                                        <i class="fas fa-user"></i>
+                                    {% endif %}
+                                </div>
+                                <span class="name">{{ contacto.nombre or 'Sin nombre' }}</span>
+                            </div>
+                        </td>
+                        <td class="contact-phone">
+                            <span class="phone">{{ contacto.telefono }}</span>
+                        </td>
+                        <td class="contact-date">
+                            {% if contacto.creado_en %}
+                                {% if contacto.creado_en.strftime %}
+                                    {{ contacto.creado_en.strftime('%Y-%m-%d') }}
+                                {% else %}
+                                    {{ contacto.creado_en[:10] }}
+                                {% endif %}
+                            {% else %}
+                                2024-01-15
+                            {% endif %}
+                        </td>
+                        <td class="contact-campaigns">
+                            {{ contacto.campanas_participadas or 3 }}
+                        </td>
+                        <td class="contact-actions">
+                            <button class="btn-action edit-btn" data-id="{{ contacto.id }}" title="Editar">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="btn-action delete-btn" data-id="{{ contacto.id }}" title="Eliminar">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="6" class="empty-state">
+                            <div class="empty-content">
+                                <i class="fas fa-users"></i>
+                                <h4>No hay contactos</h4>
+                                <p>Agrega tu primer contacto o importa una lista desde Excel</p>
+                                <button class="btn-primary" onclick="document.getElementById('btnAgregarContacto').click()">
+                                    <i class="fas fa-plus"></i> Agregar Contacto
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Paginación -->
+    <div class="pagination-container">
+        <div class="pagination-info">
+            Mostrando <span id="showingStart">1</span> a <span id="showingEnd">{{ contactos|length }}</span> de <span id="totalContacts">{{ contactos|length }}</span> contactos
+        </div>
+        <div class="pagination" id="pagination">
+            <button class="btn-page" id="btnPrevPage" disabled>
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="btn-page active">1</button>
+            <button class="btn-page" id="btnNextPage" disabled>
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>

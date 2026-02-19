@@ -1,0 +1,182 @@
+/* Conexión WhatsApp - Estilos */
+
+.whatsapp-card .card-title i {
+    color: #25D366;
+}
+
+/* Estado de Conexión */
+.connection-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.status-label {
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.status-badge.connected {
+    background-color: #DCFCE7;
+    color: #166534;
+}
+
+.status-badge.disconnected {
+    background-color: #FEE2E2;
+    color: #991B1B;
+}
+
+.status-badge.connecting {
+    background-color: #FEF3C7;
+    color: #92400E;
+}
+
+.status-badge i {
+    margin-right: 6px;
+    font-size: 0.75rem;
+}
+
+/* Alertas */
+.success-alert {
+    background-color: rgba(37, 211, 102, 0.05);
+    border: 1px solid rgba(37, 211, 102, 0.2);
+    border-left: 4px solid #25D366;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.alert-title {
+    color: #25D366;
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin: 0 0 4px 0;
+}
+
+.alert-subtitle {
+    color: #6B7280;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+/* Información de la Cuenta */
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    padding: 4px 0;
+}
+
+.info-label {
+    color: #6B7280;
+}
+
+.info-value {
+    font-weight: 500;
+    color: #111827;
+}
+
+/* Estados de Conexión */
+.connection-info {
+    transition: all 0.3s ease;
+}
+
+.connection-info.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.connection-info.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Placeholder desconectado */
+.disconnected-placeholder {
+    text-align: center;
+    padding: 32px 16px;
+    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.disconnected-icon {
+    font-size: 3rem;
+    color: #9CA3AF;
+    margin-bottom: 16px;
+}
+
+.disconnected-text {
+    font-weight: 500;
+    color: #374151;
+    margin: 0 0 8px 0;
+}
+
+.disconnected-subtitle {
+    color: #6B7280;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.status-badge.connecting {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+}
+
+.disconnected-placeholder {
+    text-align: center;
+    padding: 32px 16px;
+    background: linear-gradient(135deg, #F9FAFB 0%, #F3F4F6 100%);
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.disconnected-icon {
+    font-size: 3rem;
+    color: #9CA3AF;
+    margin-bottom: 16px;
+}
+
+.disconnected-text {
+    font-weight: 500;
+    color: #374151;
+    margin: 0 0 8px 0;
+}
+
+.disconnected-subtitle {
+    color: #6B7280;
+    font-size: 0.875rem;
+    margin: 0;
+}

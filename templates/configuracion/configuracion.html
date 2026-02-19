@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Configuración - WhatsApp Sender{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/configuracion/configuracion.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/configuracion/componentes/conexion_whatsapp.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/configuracion/componentes/configuracion_aplicacion.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="app-layout">
+    <div class="main-content">
+        <div class="config-container">
+            <!-- Header -->
+            <div class="config-header">
+                <div class="header-info">
+                    <h1>Configuración del Sistema</h1>
+                    <p>Administra la configuración de tu WhatsApp Business y el estado del sistema</p>
+                </div>
+                <button id="refreshStatusBtn" class="btn btn-outline">
+                    <i class="fas fa-sync-alt"></i>
+                    Actualizar Estado
+                </button>
+            </div>
+
+            <!-- Grid de Configuración -->
+            <div class="config-grid">
+                {% include 'configuracion/componentes/conexion_whatsapp.html' %}
+                {% include 'configuracion/componentes/configuracion_aplicacion.html' %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-spinner">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Procesando...</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/paginas/configuracion/configuracion.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/configuracion/componentes/conexion_whatsapp.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/configuracion/componentes/configuracion_aplicacion.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const configLink = document.querySelector('a[href*="configuracion"]');
+        if (configLink) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('activo');
+            });
+            configLink.classList.add('activo');
+        }
+    }, 200);
+});
+</script>
+{% endblock %}

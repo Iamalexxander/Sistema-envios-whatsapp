@@ -1,0 +1,286 @@
+/* Configuración de Aplicación - Estilos */
+
+.app-card .card-title i {
+    color: #25D366;
+}
+
+/* Perfil de Usuario */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(135deg, #F9FAFB 0%, #FFFFFF 100%);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #F3F4F6;
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+}
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 500;
+    color: #111827;
+    margin: 0 0 4px 0;
+    font-size: 0.875rem;
+}
+
+.user-role {
+    color: #6B7280;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+/* Formularios */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #25D366;
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.1);
+}
+
+.form-input:hover {
+    border-color: #9CA3AF;
+}
+
+.form-input.changed {
+    border-color: #25D366;
+    background-color: rgba(37, 211, 102, 0.02);
+}
+
+/* Configuraciones de App */
+.app-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    padding: 8px 0;
+    border-bottom: 1px solid #F9FAFB;
+    transition: background-color 0.2s ease;
+}
+
+.setting-row:last-child {
+    border-bottom: none;
+}
+
+.setting-row:hover {
+    background-color: #FAFBFC;
+    border-radius: 4px;
+    padding: 8px 8px;
+    margin: 0 -8px;
+}
+
+.setting-label {
+    color: #6B7280;
+    font-weight: 400;
+}
+
+.setting-value {
+    font-weight: 500;
+    color: #111827;
+}
+
+/* Botones de Acción */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-buttons .btn {
+    transition: all 0.3s ease;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons .btn-primary:hover {
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+/* Estados de los botones */
+.btn.loading {
+    position: relative;
+    color: transparent;
+}
+
+.btn.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+/* Switch en configuración de app */
+.app-settings .switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.app-settings .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.app-settings .switch-label {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #D1D5DB;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.app-settings .switch-label:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.app-settings .switch input:checked + .switch-label {
+    background-color: #25D366;
+}
+
+.app-settings .switch input:checked + .switch-label:before {
+    transform: translateX(20px);
+}
+
+/* Indicador de cambios */
+.app-card.has-changes {
+    border-left: 4px solid #25D366;
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.1);
+}
+
+.app-card.has-changes .card-title::after {
+    content: "●";
+    color: #25D366;
+    margin-left: 8px;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+/* Validación de formularios */
+.form-input.error {
+    border-color: #EF4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-group .error-message {
+    color: #EF4444;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    display: none;
+}
+
+.form-group.has-error .error-message {
+    display: block;
+}
+
+/* Animaciones */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .user-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .setting-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .action-buttons {
+        gap: 8px;
+    }
+}
+

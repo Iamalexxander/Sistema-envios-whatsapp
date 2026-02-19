@@ -1,0 +1,278 @@
+/* Estilos específicos para el componente de formulario de mensaje */
+
+.formulario-mensaje-card #mensaje-textarea {
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Stats de mensaje */
+.formulario-mensaje-card .mensaje-stats {
+    text-align: center;
+    margin: 12px 0;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.formulario-mensaje-card #mensaje-info {
+    font-size: 13px;
+    font-weight: 500;
+    color: #10b981;
+    transition: color 0.3s ease;
+}
+
+/* ✅ Badge de límite en el label */
+.formulario-mensaje-card .label-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 2px 8px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Opciones de archivos exactas de la imagen */
+.formulario-mensaje-card .archivo-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.formulario-mensaje-card .archivo-option {
+    flex: 1;
+    cursor: pointer;
+}
+
+.formulario-mensaje-card .archivo-option input {
+    display: none;
+}
+
+.formulario-mensaje-card .option-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.formulario-mensaje-card .archivo-option input:checked + .option-box {
+    border-color: #3b82f6;
+    background: #eff6ff;
+}
+
+.formulario-mensaje-card .option-box i {
+    font-size: 18px;
+    color: #64748b;
+}
+
+.formulario-mensaje-card .archivo-option input:checked + .option-box i {
+    color: #3b82f6;
+}
+
+.formulario-mensaje-card .option-box span {
+    font-size: 12px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* NUEVOS ESTILOS PARA PREVIEW DE ARCHIVO */
+.formulario-mensaje-card .archivo-preview {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.formulario-mensaje-card .archivo-preview.show {
+    background: #ecfdf5;
+    border-color: #10b981;
+    border-style: solid;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.formulario-mensaje-card .preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.formulario-mensaje-card .btn-eliminar-archivo {
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+}
+
+.formulario-mensaje-card .btn-eliminar-archivo:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+
+.formulario-mensaje-card .preview-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.formulario-mensaje-card .preview-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.formulario-mensaje-card .preview-icon i {
+    font-size: 24px;
+    color: #6b7280;
+}
+
+.formulario-mensaje-card .preview-icon.imagen i {
+    color: #10b981;
+}
+
+.formulario-mensaje-card .preview-icon.video i {
+    color: #f59e0b;
+}
+
+.formulario-mensaje-card .preview-icon.documento i {
+    color: #3b82f6;
+}
+
+.formulario-mensaje-card .preview-info {
+    flex: 1;
+}
+
+.formulario-mensaje-card .preview-nombre {
+    font-weight: 500;
+    color: #111827;
+    margin-bottom: 4px;
+    word-break: break-all;
+}
+
+.formulario-mensaje-card .preview-size {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.formulario-mensaje-card .preview-tipo {
+    font-size: 11px;
+    color: #10b981;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.formulario-mensaje-card .preview-actions {
+    text-align: center;
+}
+
+.formulario-mensaje-card .btn-cambiar {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 auto;
+    transition: all 0.2s ease;
+}
+
+.formulario-mensaje-card .btn-cambiar:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.formulario-mensaje-card .btn-cambiar i {
+    font-size: 11px;
+}
+
+/* Estilo especial para textarea readonly */
+#mensaje-textarea[readonly] {
+    background-color: #f3f4f6;
+    color: #6b7280;
+    cursor: not-allowed;
+    border: 1px solid #d1d5db;
+}
+
+/* ✅ EFECTO VISUAL CUANDO ALCANZA EL LÍMITE */
+.formulario-mensaje-card #mensaje-textarea.limite-alcanzado {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2;
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ✅ Advertencia visual en el contenedor de stats */
+.formulario-mensaje-card .mensaje-stats.limite {
+    background: #fee2e2;
+    border-color: #ef4444;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.formulario-mensaje-card .mensaje-stats.warning {
+    background: #fef3c7;
+    border-color: #f59e0b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .formulario-mensaje-card .archivo-options {
+        flex-direction: column;
+    }
+    
+    .formulario-mensaje-card .preview-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .formulario-mensaje-card .preview-header {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

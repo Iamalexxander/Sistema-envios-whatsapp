@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">WhatsApp Sender</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/modal_confirmacion_global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/whatsapp_status.css') }}">
+    
+    <!-- CSS Dinámico de páginas (se carga bajo demanda) -->
+    <div id="dynamic-styles"></div>
+</head>
+<body>
+    <!-- Sidebar cargado UNA SOLA VEZ -->
+    {% include 'componentes/sidebar.html' %}
+    
+    <!-- Contenedor de contenido dinámico -->
+    <div id="app-content" class="app-layout">
+        <div class="loading-container">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Cargando...</p>
+        </div>
+    </div>
+    
+    <!-- Scripts base (cargados una sola vez) -->
+    <script src="{{ url_for('static', filename='js/componentes/sidebar.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/componentes/modal_confirmacion_global.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/componentes/whatsapp_status_indicator.js') }}"></script>
+    
+    <!-- Sistema de navegación SPA -->
+    <script src="{{ url_for('static', filename='js/spa_navigation.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!-- Sidebar de navegación -->
+<aside class="sidebar" id="sidebar">
+    <div class="sidebar-encabezado">
+        <a href="{{ url_for('principales.inicio') }}" class="logo">
+            <img src="{{ url_for('static', filename='imagenes/logo.png') }}" alt="WhatsApp Sender Logo" class="logo-imagen">
+            <span>WhatsApp Sender</span>
+        </a>
+    </div>
+        
+    <nav class="sidebar-nav">
+        <a href="{{ url_for('campanas.index') }}" 
+           class="nav-item {% if pantalla_actual == 'campanas' %}activo{% endif %}"
+           data-label="Campañas">
+            <i class="fas fa-bullhorn"></i>
+            <span>Campañas</span>
+        </a>
+        
+        <a href="{{ url_for('contactos') }}" 
+           class="nav-item {% if pantalla_actual == 'contactos' %}activo{% endif %}"
+           data-label="Contactos">
+            <i class="fas fa-users"></i>
+            <span>Contactos</span>
+        </a>
+        
+        <a href="{{ url_for('plantillas') }}" 
+           class="nav-item {% if pantalla_actual == 'plantillas' %}activo{% endif %}"
+           data-label="Plantillas">
+            <i class="fas fa-clipboard-list"></i>
+            <span>Plantillas</span>
+        </a>
+        
+        <a href="{{ url_for('analiticas') }}" 
+           class="nav-item {% if pantalla_actual == 'analiticas' %}activo{% endif %}"
+           data-label="Analíticas">
+            <i class="fas fa-chart-line"></i>
+            <span>Analíticas</span>
+        </a>
+        
+        <a href="{{ url_for('configuracion') }}" 
+           class="nav-item {% if pantalla_actual == 'configuracion' %}activo{% endif %}"
+           data-label="Config">
+            <i class="fas fa-cog"></i>
+            <span>Configuración</span>
+        </a>
+    </nav>
+
+    <!-- Footer del sidebar -->
+    <div class="sidebar-footer">
+        <div class="footer-content">
+            <div class="footer-version">WhatsApp Sender v1.0</div>
+            <div class="footer-copyright">© 2025 Marketing SyssoEcuador</div>
+        </div>
+    </div>
+</aside>
+
+<!-- Botón toggle para móvil -->
+<button class="sidebar-toggle" id="sidebar-toggle">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Overlay para móvil -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>

@@ -1,0 +1,66 @@
+<!-- Rendimiento de Campañas -->
+<div class="card rendimiento-card">
+    <div class="card-header">
+        <div class="card-header-content">
+            <i class="fas fa-chart-bar"></i>
+            <span>Rendimiento de Campañas</span>
+        </div>
+        <div class="card-header-actions">
+            <button class="btn-export-pdf" id="btn-exportar-pdf">
+                <i class="fas fa-file-pdf"></i>
+                Exportar PDF
+            </button>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="tabla-container">
+            <table class="tabla-rendimiento">
+                <thead>
+                    <tr>
+                        <th>Nombre de Campaña</th>
+                        <th>Enviados</th>
+                        <th>Entregados</th>
+                        <th>Tasa de Éxito</th>
+                        <th>Respuestas</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-campanas-body">
+                    <!-- Los datos se cargarán dinámicamente desde la API -->
+                    <tr>
+                        <td colspan="6" class="loading-row">
+                            <div class="loading-table">
+                                <div class="spinner-small"></div>
+                                <span>Cargando campañas...</span>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+.loading-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    color: #64748b;
+}
+
+.spinner-small {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #f3f4f6;
+    border-top: 2px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-row {
+    text-align: center;
+}
+</style>

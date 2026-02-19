@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Contactos - WhatsApp Sender{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/contactos/contactos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/contactos/componentes/subir_archivo.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/contactos/componentes/tabla_contactos.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/contactos/componentes/footer_estadisticas.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/paginas/contactos/componentes/modal_contacto.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/componentes/whatsapp_status.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="app-layout">
+    <div class="main-content">
+        <!-- Header con badge -->
+        <div class="page-header">
+            <div class="header-left">
+                <h1>Gestión de Contactos</h1>
+                <p>Administra tu base de datos de contactos de WhatsApp</p>
+            </div>
+            <div class="header-right">
+                <!-- Badge de WhatsApp -->
+                <div class="status-badge {% if estado_whatsapp.conectado %}connected{% else %}disconnected{% endif %}" 
+                     id="statusBadgeGlobal">
+                    <div class="status-dot"></div>
+                    <span class="status-text">
+                        {% if estado_whatsapp.conectado %}
+                            <i class="fas fa-check-circle"></i> Conectado
+                        {% else %}
+                            <i class="fas fa-times-circle"></i> Desconectado
+                        {% endif %}
+                    </span>
+                </div>
+                
+                <!-- Botón principal -->
+                <button class="btn-primary" id="btnAgregarContacto">
+                    <i class="fas fa-plus"></i> Agregar Contacto
+                </button>
+            </div>
+        </div>
+
+        <!-- Componentes -->
+        {% include 'contactos/componentes/subir_archivo.html' %}
+        {% include 'contactos/componentes/busqueda_filtros.html' %}
+        {% include 'contactos/componentes/tabla_contactos.html' %}
+        {% include 'contactos/componentes/footer_estadisticas.html' %}
+    </div>
+</div>
+
+<!-- Modales -->
+{% include 'contactos/componentes/modal_contacto.html' %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/componentes/whatsapp_status_indicator.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/contactos/contactos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/contactos/componentes/subir_archivo.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/contactos/componentes/tabla_contactos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/contactos/componentes/modal_contacto.js') }}"></script>
+<script src="{{ url_for('static', filename='js/paginas/contactos/componentes/footer_estadisticas.js') }}"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Marcar menú activo
+    setTimeout(function() {
+        const contactosLink = document.querySelector('a[href*="contactos"]');
+        if (contactosLink) {
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('activo');
+            });
+            contactosLink.classList.add('activo');
+        }
+    }, 200);
+});
+</script>
+{% endblock %}

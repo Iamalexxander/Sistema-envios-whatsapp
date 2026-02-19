@@ -1,0 +1,27 @@
+<!-- Componente: Estadísticas del Footer -->
+<div class="footer-stats">
+    <div class="stat-item">
+        <span class="stat-number" id="validContactsCount">
+            {{ estadisticas.contactos_activos if estadisticas else 5 }}
+        </span>
+        <span class="stat-label">Números Válidos</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number" id="invalidContactsCount">
+            {{ estadisticas.contactos_inactivos if estadisticas else 2 }}
+        </span>
+        <span class="stat-label">Números Inválidos</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number" id="pendingValidationCount">
+            {{ estadisticas.nuevos_contactos if estadisticas else 1 }}
+        </span>
+        <span class="stat-label">Nuevos Contactos</span>
+    </div>
+    <div class="stat-item">
+        <span class="stat-number" id="totalContactsFooter">
+            {{ estadisticas.total_contactos if estadisticas else 8 }}
+        </span>
+        <span class="stat-label">Total de Contactos</span>
+    </div>
+</div>

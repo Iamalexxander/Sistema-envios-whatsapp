@@ -1,0 +1,147 @@
+### Variables
+@baseUrl = http://localhost:5000
+@contentType = application/json
+
+### 1. Obtener todos los contactos
+GET {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+### 2. Obtener estadísticas de contactos
+GET {{baseUrl}}/contactos/api/estadisticas
+Content-Type: {{contentType}}
+
+### 3. Crear nuevo contacto - Caso exitoso
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Juan Pérez",
+  "telefono": "+593987654321"
+}
+
+### 4. Crear contacto sin nombre - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "telefono": "+593987654322"
+}
+
+### 5. Crear contacto sin teléfono - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "María García"
+}
+
+### 6. Crear contacto con teléfono inválido - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Pedro López",
+  "telefono": "123456789"
+}
+
+### 7. Crear contacto completo con estado
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Carlos Rodríguez",
+  "telefono": "+593987654324",
+  "estado": "activo"
+}
+
+### 8. Crear contacto duplicado (mismo teléfono) - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Otro Juan",
+  "telefono": "+593987654321"
+}
+
+### 9. Crear contacto con teléfono formato incorrecto - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Test Error",
+  "telefono": "+593812345678"
+}
+
+### 10. Obtener contacto específico (usar ID real)
+GET {{baseUrl}}/contactos/api/CONTACT_ID_HERE
+Content-Type: {{contentType}}
+
+### 11. Actualizar contacto (usar ID real)
+PUT {{baseUrl}}/contactos/api/CONTACT_ID_HERE
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Juan Pérez Actualizado",
+  "telefono": "+593987654321",
+  "estado": "activo"
+}
+
+### 12. Buscar contactos
+GET {{baseUrl}}/contactos/api/buscar?q=Juan
+Content-Type: {{contentType}}
+
+### 13. Buscar por teléfono
+GET {{baseUrl}}/contactos/api/buscar?q=987654321
+Content-Type: {{contentType}}
+
+### 14. Eliminar contacto (usar ID real)
+DELETE {{baseUrl}}/contactos/api/CONTACT_ID_HERE
+Content-Type: {{contentType}}
+
+### 15. Obtener contacto eliminado - Error 404
+GET {{baseUrl}}/contactos/api/CONTACT_ID_HERE
+Content-Type: {{contentType}}
+
+### 16. Crear campaña con contactos reales
+POST {{baseUrl}}/api/campanas
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Campaña de Prueba",
+  "descripcion": "Campaña de testing",
+  "content": "Hola! Este es un mensaje de prueba.",
+  "template": "1",
+  "interval": 5,
+  "recipients_origin": "activos"
+}
+
+### 17. Obtener campañas
+GET {{baseUrl}}/api/campanas
+Content-Type: {{contentType}}
+
+### 18. Obtener estado de campaña
+GET {{baseUrl}}/api/campanas/estado_real
+Content-Type: {{contentType}}
+
+### 19. Prueba con campos no permitidos - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Test Campos Extra",
+  "telefono": "+593987654325",
+  "email": "test@email.com",
+  "empresa": "Test Corp",
+  "notas": "Esto no debería pasar"
+}
+
+### 20. Crear contacto con estado inválido - Error 400
+POST {{baseUrl}}/contactos/api
+Content-Type: {{contentType}}
+
+{
+  "nombre": "Test Estado",
+  "telefono": "+593987654326",
+  "estado": "estado_invalido"
+}
+

@@ -1,0 +1,36 @@
+# Flask y componentes core
+Flask==3.0.0
+Flask-SocketIO==5.3.5
+Jinja2==3.1.2
+Werkzeug==3.0.1
+python-dotenv==1.0.0
+python-engineio==4.8.0
+python-socketio==5.10.0
+
+# Manejo de datos y Excel
+pandas==2.2.2
+numpy==1.26.4
+openpyxl==3.1.2
+
+# WhatsApp y automatización web
+selenium==4.26.1
+
+# Utilidades
+phonenumbers==8.13.26
+requests==2.31.0
+
+# Assets y compilación
+Flask-Assets==2.1.0
+
+# Aplicación de escritorio
+pywebview==4.4.1
+PyInstaller==6.3.0
+
+# Generación de PDFs
+reportlab==4.0.7
+Pillow==10.4.0
+
+# Adicionales para producción
+gunicorn==21.2.0
+python-dateutil==2.8.2
+pytz==2024.1

@@ -1,0 +1,47 @@
+<!-- Progreso de Campaña -->
+<div class="card progress-card progreso-campana-card">
+    <div class="card-header">
+        <div class="card-header-content">
+            <i class="fas fa-chart-line"></i>
+            <span>Progreso de Campaña</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="progress-section">
+            <div class="progress-label">
+                <span>Progreso</span>
+                <span class="progress-percent" id="progress-percent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="progress-stats">
+            <div class="progress-stat">
+                <div class="stat-value" id="enviados-count">0</div>
+                <div class="stat-title">Enviados</div>
+            </div>
+            <div class="progress-stat">
+                <div class="stat-value" id="recibidos-count">550</div>
+                <div class="stat-title">Recibidos</div>
+            </div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-row">
+                <span>Tasa de Éxito:</span>
+                <span class="metric-success" id="tasa-exito">94.2%</span>
+            </div>
+            <div class="metric-row">
+                <span>Fallidos:</span>
+                <span class="metric-error" id="fallidos-count">23</span>
+            </div>
+        </div>
+
+        <button class="btn-iniciar" id="btn-iniciar" onclick="iniciarCampana()" disabled>
+            <i class="fas fa-paper-plane"></i>
+            Iniciar Campaña
+        </button>
+    </div>
+</div>

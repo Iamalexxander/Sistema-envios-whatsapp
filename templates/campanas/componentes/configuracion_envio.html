@@ -1,0 +1,32 @@
+<!-- Configuración de Envío -->
+<div class="card configuracion-envio-card">
+    <div class="card-header">
+        <div class="card-header-content">
+            <i class="fas fa-cog"></i>
+            <span>Configuración de Envío</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="config-group">
+            <label>Intervalo de Envío</label>
+            <div class="range-container">
+                <input type="range" min="3" max="60" value="5" id="intervalo-range" class="range-slider">
+                <div class="range-value">
+                    <span id="range-display">5</span> segundos
+                </div>
+            </div>
+            <p class="help-text">Recomendado: 3-10 segundos para evitar ser bloqueado</p>
+        </div>
+
+        <div class="config-stats">
+            <div class="stat-box">
+                <div class="stat-label">Total de Destinatarios</div>
+                <div class="stat-number" id="total-destinatarios">1847</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-label">Duración Estimada</div>
+                <div class="stat-number" id="duracion-estimada">154 min</div>
+            </div>
+        </div>
+    </div>
+</div>

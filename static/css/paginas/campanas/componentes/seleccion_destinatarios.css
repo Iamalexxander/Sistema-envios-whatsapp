@@ -1,0 +1,13 @@
+/* Estilos específicos para el componente de selección de destinatarios */
+
+.seleccion-destinatarios-card .form-group {
+    margin-bottom: 0;
+}
+
+.seleccion-destinatarios-card select {
+    font-weight: 500;
+}
+
+.seleccion-destinatarios-card select option {
+    padding: 10px;
+}

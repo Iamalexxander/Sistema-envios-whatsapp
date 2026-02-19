@@ -1,0 +1,21 @@
+/* Tendencias de Entrega */
+
+.tendencias-card .card-header-actions select {
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-size: 12px;
+    background: white;
+    color: #374151;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.chart-container canvas {
+    max-height: 100%;
+    max-width: 100%;
+}

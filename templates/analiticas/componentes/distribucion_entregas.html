@@ -1,0 +1,39 @@
+<!-- Distribución de Entregas -->
+<div class="card distribucion-card">
+    <div class="card-header">
+        <div class="card-header-content">
+            <i class="fas fa-chart-pie"></i>
+            <span>Distribución de Entregas</span>
+        </div>
+    </div>
+    <div class="card-content">
+        <div class="distribucion-container">
+            <div class="chart-container">
+                <canvas id="distribucion-chart" width="300" height="300"></canvas>
+            </div>
+            <div class="distribucion-stats">
+                <div class="stat-item">
+                    <div class="stat-color entregados"></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Entregados</span>
+                        <span class="stat-value" id="stat-entregados">2893</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-color fallidos"></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Fallidos</span>
+                        <span class="stat-value" id="stat-fallidos">147</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-color pendientes"></div>
+                    <div class="stat-info">
+                        <span class="stat-label">Pendientes</span>
+                        <span class="stat-value" id="stat-pendientes">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
